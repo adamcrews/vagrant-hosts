@@ -54,8 +54,7 @@ class VagrantHosts::Provisioner::Linux
     hostname ||= @machine.name # Fall back if hostname is unset.
 
     [
-      ['127.0.0.1', ['localhost']],
-      ['127.0.1.1', [hostname]],
+      ['127.0.0.1', ['localhost.localdomain', 'localhost4.localdomain4', 'localhost', 'localhost4']],
     ]
   end
 
@@ -69,7 +68,7 @@ class VagrantHosts::Provisioner::Linux
       m_networks.each do |(net_type, opts)|
         next unless net_type == :private_network
         addr = opts[:ip]
-        hosts << [addr, [m.name, m_hostname]]
+        hosts << [addr, [m_hostname, m.name]]
       end
     end
 
