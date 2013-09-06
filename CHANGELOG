@@ -1,6 +1,15 @@
 CHANGELOG
 =========
 
+1.1.5
+-----
+
+2013-09-05
+
+  * Not for general consumption!!!!
+  * This version puts the hostnames as fqdn first, then short name
+  * Set a proper localhost line
+
 1.1.4
 -----
 
